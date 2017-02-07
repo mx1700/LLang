@@ -1,0 +1,31 @@
+group 'me.mx1700'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.0-beta-22'
+
+    repositories {
+        //mavenCentral()
+        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1/'}
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.6
+
+repositories {
+    //mavenCentral()
+    maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1/'}
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
